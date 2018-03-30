@@ -1,5 +1,5 @@
 <?php
-namespace hw11\order;
+namespace order;
 
 final class Order extends \cart\Cart
 {

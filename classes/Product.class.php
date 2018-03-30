@@ -1,6 +1,6 @@
 <?php
 // header ("Content-Type: text/html; charset=utf-8");
-namespace hw11\classes;
+namespace classes;
 
 // interface InterfaceNameForProduct
 // {

@@ -1,5 +1,5 @@
 <?php
-namespace hw11\classes;
+namespace cart;
 
 class Cart
 {
