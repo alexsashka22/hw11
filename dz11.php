@@ -69,7 +69,7 @@ $car2->getDescribe();
 /**
  *Интерфейс
  */
-echo "<pre>";
+echo '<br>';
 interface InterfaceNameForTv
 {
     public function changeColor($color);
@@ -103,7 +103,7 @@ $tv2->getDescribe();
 /**
  *Интерфейс
  */
-echo "<pre>";
+echo '<br>';
 interface InterfaceNameForPen
 {
     public function getMaterial($material);
@@ -164,7 +164,7 @@ $pen2->getDescribe();
 /**
  *Интерфейс
  */
-echo "<pre>";
+echo '<br>';
 interface InterfaceNameForDuck
 {
     public function showConstant ();
@@ -212,7 +212,7 @@ $duck2 = new Duck(15000, 'Утка', 'Мандаринка', 'Декоратив
 $duck2->getDescribe();
 $duck2->getAge(5);
 
-echo "<pre>";
+echo '<br>';
 
 /**
  * Дочерний класс
@@ -253,9 +253,9 @@ final class ProductClass extends Product implements InterfaceNameForProductClass
         echo "Цена: {$this->price} руб. Это {$this->name}, модель - {$this->model}, из категории - {$this->category}, сделана из материала {$this->material}. ";
 
         if ($this->name == 'Тетрадь') {
-            echo "Коичество страниц - {$this->pages}\n";
+            echo "Коичество страниц - {$this->pages} <br>";
         } else {
-            echo "Объём - {$this->volume} мл\n";
+            echo "Объём - {$this->volume} мл <br>";
         }
     }
 }
@@ -277,10 +277,10 @@ class Cart
     public function addProduct($product){
         $product->numberProduct = 1; //если это убрать то тоже буде работать, только не будет учитывать первый
 
-        if(array_key_exists($product->name, $this->countProduct)){
+        if (array_key_exists($product->name, $this->countProduct)) {
             $this->countProduct[$product->name]->numberProduct++;
 
-            echo "<pre>" . 'Товар добавлен в корзину<br>';
+            echo '<br>Товар добавлен в корзину<br>';
         }
         else{
             $this->countProduct[$product->name] = $product;
@@ -315,7 +315,7 @@ final class Order extends Cart
             $resCountProduct = $resCountProduct + $value->numberProduct;
         }
 
-        echo "<pre>" . 'Общее количество товаров: ' . $resCountProduct;
+        echo '<br>' . 'Общее количество товаров: ' . $resCountProduct;
     }
 
     public function sum(){ //подсчитать общую сумму продукта
@@ -335,12 +335,16 @@ final class Order extends Cart
 //$cart->deleteOneProduct($pen2);
 
 $order = new Order();
+$order->addProduct($car1); //добавляю товар в корзину
 $order->addProduct($car2); //добавляю товар в корзину
 $order->addProduct($tv1); //добавляю товар в корзину
+$order->addProduct($tv2); //добавляю товар в корзину
 $order->addProduct($pen1); //добавляю товар в корзину
-$order->addProduct($duck1); //добавляю товар в корзину
 $order->addProduct($pen2); //добавляю товар в корзину
+$order->addProduct($duck1); //добавляю товар в корзину
+$order->addProduct($duck2); //добавляю товар в корзину
 $order->addProduct($product1); //добавляю товар в корзину
+$order->addProduct($product2); //добавляю товар в корзину
 
 echo '<br>';
 
